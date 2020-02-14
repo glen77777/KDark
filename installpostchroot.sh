@@ -23,8 +23,8 @@ systemctl enable sddm
 systemctl enable ufw
 echo -e "\n%wheel ALL=(ALL) ALL\nroot ALL=(ALL) ALL" > /etc/sudoers
 useradd -G wheel,network,audio,video -m kdark
-read -p "root password? " $rootpass
-read -p "user password? " $userpass
+read -p "root password? " rootpass
+read -p "user password? " userpass
 echo root:$rootpass | chpasswd
 echo kdark:$userpass | chpasswd
 rsync -arv /kdark /home
