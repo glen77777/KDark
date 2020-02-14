@@ -5,8 +5,8 @@ pacman-key --update
 fdisk -l
 read -p "drive to install to? " drive
 echo 'type=83' | sudo sfdisk $drive
-mkfs.ext4 $drive1
-mount $drive1 /mnt
+mkfs.ext4 ${drive}1
+mount ${drive}1 /mnt
 pacstrap /mnt base base-devel linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 rsync -E /home/kdark/installpostchroot.sh /mnt/installpostchroot.sh
