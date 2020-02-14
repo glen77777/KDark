@@ -10,7 +10,7 @@ pacman -Syuu
 pacman -S --noconfirm - < packages.x86_64
 echo 8.8.8.8 /etc/resolv.conf
 echo 8.8.4.4 /etc/resolv.conf
-read -p "drive to install bootloader to?(same in most cases) " $bootloader
+read -p "drive to install bootloader to?(same in most cases) " bootloader
 grub-install $bootloader
 grub-mkconfig -o /boot/grub/grub.cfg
 usermod -s /usr/bin/zsh root
